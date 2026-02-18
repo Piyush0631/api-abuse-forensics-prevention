@@ -1,0 +1,21 @@
+{
+  "name": "api-abuse-forensics-prevention",
+  "version": "1.0.0",
+  "description": "Modern APIs are vulnerable to abuse such as rate-limit attacks, token misuse,\r parameter tampering, and Broken Object Level Authorization (BOLA). These attacks\r often go undetected or lack proper forensic tracking.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
