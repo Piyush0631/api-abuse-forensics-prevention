@@ -9,13 +9,12 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/health", (req, res) => res.status(200).json({ status: "ok" }));
+app.use("/health", healthRoutes);
 
 // Protected and rate-limited routes
 app.use(jwtAuth);
-app.use(logTokenUsage); // Log token usage after JWT auth
+app.use(logTokenUsage);
 app.use(rateLimit);
-app.use("/health", healthRoutes);
 
 app.use(errorMiddleware);
 

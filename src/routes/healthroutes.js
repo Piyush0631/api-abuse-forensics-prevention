@@ -2,9 +2,21 @@ const express = require("express");
 const { protect } = require("../middlewares/auth.middleware");
 const healthController = require("../controllers/healthController");
 const redis = require("../config/redis");
+const Joi = require("joi");
+const validateRequest = require("../middlewares/validateRequest");
 const router = express.Router();
 
-router.route("/").get(healthController.healthCheck);
+// Joi schema for health check query params
+const healthCheckQuerySchema = Joi.object({
+  ping: Joi.string().optional(),
+});
+
+router
+  .route("/")
+  .get(
+    validateRequest(healthCheckQuerySchema, "query"),
+    healthController.healthCheck,
+  );
 
 router.route("/protected").get(protect, healthController.protectedHealthCheck);
 

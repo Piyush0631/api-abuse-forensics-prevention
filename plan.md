@@ -255,6 +255,3 @@ This plan breaks down each feature into actionable, detailed steps, so every pha
   - Prioritize and implement new features.
 
 ---
-
-**Next Immediate Step:**
-Start Phase 2.1: Implement token misuse detection middleware and event logging.
